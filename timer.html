@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Goal in 2023</title>
+        <style>
+      #heading{
+        text-align: center;
+        color: rgb(9, 9, 9);
+      }
+      #list{
+        color:rgba(214, 32, 15, 0.893);
+        text-transform: capitalize;
+        
+      }
+    #timer{
+      width: 500px;
+      height: 50px;
+      border: 5px solid red;
+      margin-top:100px;
+      margin-left: 400px;
+      font-size: 24px;
+      background-color: black;
+      color:yellow;
+      text-align: justify;
+      padding-top: 18px;
+      padding-left: 15px;
+      border-radius:92px;
+      border-width: 5px;
+      border-top-right-radius:34px;
+      border-bottom-left-radius: 34px;
+      
+      box-shadow:0cqi;
+      background-position:0cap;
+      border-style:ridge;
+    
+      
+    }
+   
+        </style>
+    </head>
+    <body><section>
+        <h1 id="heading"> 
+          This is timer which is build using javascript,css and html.
+        </h1>
+        
+<div id="timer" ></div>
+
+        <h2 color="red"></h2>
+      
+       </section>
+
+
+
+
+<script>
+  console.log("hello , checking ");
+const countdown = setInterval(() => {
+        const goalDate = new Date('December 31, 2023');
+        const currentDate = new Date();
+
+        const timeDiff = goalDate.getTime() - currentDate.getTime();
+        const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hoursLeft = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutesLeft = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const secondsLeft = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        const timer = document.getElementById('timer');
+        timer.innerHTML = `${daysLeft} days:: ${hoursLeft} hours:: ${minutesLeft} minutes:: ${secondsLeft} seconds left`;
+
+        if (timeDiff < 0) {
+          clearInterval(countdown);
+          timer.innerHTML = 'Goal achieved!';
+        }
+      }, 0.1);
+      
+
+
+</script></body>
+</html>
